@@ -1,0 +1,56 @@
+---
+title: "Proposal for 48 automakers daily stock prices analysis"
+output: pdf_document
+author: Chen Zhang
+---
+# Abstract
+  This research project analyzes and visualizes the stock price of 48 automaker companies around the world during the last decade. At this time, the proportion of automakers producing electric and CNG vehicles is increasing. Whether these automakers' stock prices are higher or even more stable than those that only make petrol cars is a question worth exploring.
+  Incorporating evidence from reviews, and stock price data, this study will discover which automakers are the top 1 around each country, which is the top 1 around each continent, and which is the top 1 global. It will argue the difference between the stock price of companies that make petrol cars only and the stock price of those companies that also make electric and CNG vehicles. Also, it will predict the stock price of those automakers in the future.  
+
+# Introduction  
+  In the 2021 United Nations Climate Change Conference, there is an ambition that 100% share of ZEVs in a new car and van sales by 2040 globally, and by 2035 in "leading markets”. Signatories include Austria, Canada, Ghana, and other countries. For now, more automakers have started to produce zero-emission vehicles in response to COP26's plan. By analyzing and visualizing the daily stock price data from 2010 to 2022, we can not only know how this company is in the past but also predict the stock price of these automakers in the future.
+The data where I found is in Kaggle, called "Top 48 automakers daily stock price from 2010 to 2022"[1]. There are two datasets I will use, first one gives all the information about those 48 automakers, like name, symbol, market capitalization, price, and country. The other data set provides all the daily stock price data starting from 2009/12/31 to 2022/02/08, which includes the adjusted close price, close price, open price, high price, low price, and volume for every automaker. Most of the variables in these datasets are numerical variables, but there are only a few variables that are categorical variables like names, symbols, market capitalization, and so on.  
+
+# Motivation  
+  The reason that I choose these datasets is I am really interested in the stock. And I also I have learned some time series analysis models on my own, like ARIMA and SARIMA. So, I think analyzing these datasets can practice what I learned and see what level I am in.  
+
+# Design  
+  We will use statistical software R with other packages, like R shiny, tydverse, plotly, and others to developing the dashboard and the background analysis. We may also use python or excel for the data cleaning process. For the report, we may use Rmarkdown to generate the final report. The next page will show the basic idea of how my dashboard looks like, which 3 sections summary, exploration data analysis, and time series analysis.
+  
+\newpage  
+## Summary Section
+### Main question
+1.	What is the average open price, close price, and adjust close price for each automaker
+2.	Which automaker has longest history?
+3.	Which automaker has the largest average volume for the last decade?
+4.	Which automaker has the biggest average open price, close price in each country, each continent, and all over the world?  
+
+### Main plots to solve
+1.	Create summary table
+2.	Create the bar chart for the average volume
+3.	Create the bar chart for the average open price, close price  
+
+## Exploration Data Analysis  
+### Main question  
+1.	What trends look like for each automaker’s price in the last decade?
+2.	Which automaker’s stock price is more stable during the last decade?  
+
+### Main plots to solve
+1.	Create trajectory plot for each variable
+2.	Create OHLC-chart   
+
+## Time Series Analysis  
+### Main question  
+1.	Do we need to apply some transformation to fit the model, like log transformation?
+2.	What parameter I need to choose to fit the ARIMA model?
+3.	Does the model reasonable or not?
+4.	Predict the stock price for the next 3 months.  
+
+### Main plots to solve  
+1.	By the EDA plot
+2.	Create ACF and PACF plot
+3.	Create standardized residual, ACF of residual, normal QQ-plot  
+
+## Reference  
+https://www.kaggle.com/datasets/prasertk/top-48-automakers-daily-stock-prices-20102022?select=automakers+stocks+2010-2022.csv
+
